@@ -13,21 +13,32 @@
 
     <body>
         <div class="container" id="gameStarts">
-            <div class="pickCharacter">
-                <div class="wonderWoman"></div>
-                <div class="superMan"></div>
-                <div class="cyborg"></div>
-                <div class="batman"></div>
+            <div class="characterSection">Pick Your Character</div>
+            <div id="pickCharacter">
+                <div class="images" id="wonderWoman"></div>
+                <div class="images" id="superMan"></div>
+                <div class="images" id="cyborg"></div>
+                <div class="images" id="batman"></div>
             </div>
 
-            <div class="sparringPartner"></div>
+            <div class="sparringSection" id="sparringPartner">Select Your Sparring Partners</div>
+
+            <div class="fightSection">Training Field</div>
+
+            <button class="attackMode">Attack</button>
+
+            <div class="defenderArea">Defender</div>
+            <div class="wins" id="chooseAnother"></div>
+            <div class="losses" id="restartGame"></div>
         </div>
+
+        <div id="gameMessage"></div>
         
     </body>
 
     <footer>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-        <script src="assets/javascript/game.js"></script>
+        <script src="assets/js/game.js"></script>
     </footer>
 </html>
