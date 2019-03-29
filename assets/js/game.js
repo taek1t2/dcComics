@@ -36,9 +36,11 @@ $(document).ready(function() {
 
     console.log(pickCharacter);
 
-    //Adding my global variables
     //choosing the characters after choosing a character
     let sparringPartner =[];
+
+    //characters that the player DIDNT select
+    let combatants = [];
 
     //laying out the player options: player chooses the opponent
     let defender;
@@ -52,6 +54,42 @@ $(document).ready(function() {
     //Track number of defeats
     let killCount = 0;
 
+    //Rendering characters into the html.
+    let createChar = function(renderingSection, characters) {
+        let charDiv = $("<div class='pickCharacter' data-name='" + pickCharacter.name + "'>");
+        let charName = $("<div class='character-name'>").text(pickCharacter.name);
+        let charImage = $("<img alt='image' class='character-image'>").attr("src", pickCharacter.imageURL);
+        let charHealth = $("<div class='character-health'>").text(pickCharacter.health);
+        charDiv.append(charName).append(charImage).append(charHealth);
+        $(renderingSection).append(charDiv);
 
+        return charDiv;
+    };
 
+    //possibly reset the game function here.
+
+    //this particular function would load all the characters into the characterSection to be selected.
+    var startGame = function() {
+
+        //Use FOR loop through the characters object and call the createChar on each character to their html card.
+        for (var key in pickCharacter) {
+            createChar(pickCharacter[key], "#pickCharacter");
+        }
+    };
+
+    //run the startGame function again
+    startGame();
+
+    let updateChar = function (charObj, sparringArea) {
+        $(sparringArea).empty();
+        createChar(charObj, sparringSection);
+    }
+
+    let renderSparring = function (sparringArr) {
+        for (var i=0; i < sparringArr.length; i++) {
+            createChar(sparringArr[i], "#sparringPartner");
+        }
+    };
+    
 })
+
