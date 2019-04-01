@@ -110,6 +110,20 @@ $(document).ready(function() {
         var restart = $("<button>Restart</button>").click(function() {
             location.reload();
         });
+
+        //Build div that will display the victory/defeat message.
+        var gameState= $("<div>").text(resultMessage);
+
+        //Render the restart button and victory/deffeat message to the page.
+        $("body").append(gameState);
+        $("body").append(restart);
+    };
+
+    //Function to clear the game message section
+    var clearMessage = function() {
+        var gameMessage = $("#gameMessage");
+
+        gameMessage.text("");
     }
 
 })
