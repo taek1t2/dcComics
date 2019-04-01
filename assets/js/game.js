@@ -80,20 +80,37 @@ $(document).ready(function() {
     //run the startGame function again
     startGame();
 
+
+    //This function handles updating the selected player or the current defender. If there is no selected player/defender this function will place the character based on the render area chosen.
     let updateChar = function (charObj, sparringArea) {
+        
+        //Empty the area so that we can re-render the new object.
         $(sparringArea).empty();
         createChar(charObj, sparringSection);
     }
 
+    //This function will render the available-to-attack enemies. This should be run once after a character has been selected.
     let renderSparring = function (sparringArr) {
         for (var i=0; i < sparringArr.length; i++) {
             createChar(sparringArr[i], "#sparringPartner");
         }
     };
 
+    //Function to handle rendering game messages.
     var renderMessage = function(message) {
+        //Builds the message and appends it to the page.
         var gameMessageSet = $("#gameMessage");
-        
+        var newMessage = $("<div>").text(message);
+        gameMessageSet.append(newMessage);
+    };
+
+    //Function which handles restarting the game after victory or defeat.
+    var restartGame = function(resultMessage) {
+        //When the 'Restart' button is clicked, reload the page.
+        var restart = $("<button>Restart</button>").click(function() {
+            location.reload();
+        });
     }
+
 })
 
