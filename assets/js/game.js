@@ -90,6 +90,10 @@ $(document).ready(function() {
             createChar(sparringArr[i], "#sparringPartner");
         }
     };
-    
+
+    var renderMessage = function(message) {
+        var gameMessageSet = $("#gameMessage");
+        
+    }
 })
 
