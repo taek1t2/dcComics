@@ -128,3 +128,14 @@ $(document).ready(function() {
 
 })
 
+//onClickEvent for selecting characters.
+$("#pickCharacter").on("click", ".character", function() {
+    //Saving the clicked character's name.
+    var name = $(this).attr("data-name");
+
+    // If a player character has not yet been chosen...
+    if (!attacker) {
+        
+    }
+})
+
