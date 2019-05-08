@@ -135,7 +135,22 @@ $("#pickCharacter").on("click", ".character", function() {
 
     // If a player character has not yet been chosen...
     if (!attacker) {
-        
+        // populate attacker with the selected character's information.
+        attacker = characters[name];
+        for (var key in characters) {
+            if (key !== name) {
+                combatants.push(characters[key]);
+            }
+        }
     }
-})
+
+    // Hide the character select div.
+    $("#charactersSection").hide();
+
+    //Then render our selected character and the combatants.
+    updateCharacter(attacker, "#sparringPartner");
+    renderEnemies(Combatants);
+});
+
+// Creates an on-click event for each partner.
 
