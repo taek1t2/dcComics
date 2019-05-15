@@ -153,4 +153,7 @@ $("#pickCharacter").on("click", ".character", function() {
 });
 
 // Creates an on-click event for each partner.
+$("#fightSection").on("click", ".characterSection", function(){
 
+    var name = $(this).attr("data-name");
+})
